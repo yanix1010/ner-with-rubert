@@ -1,0 +1,92 @@
+{
+  "track": "nlp",
+  "model": "cointegrated/rubert-tiny2",
+  "revision": "e8ed3b0c8bbf4fb6984c3de043bf7d2f4e5969ae",
+  "dataset": "Babelscape/wikineural",
+  "classes": [
+    "LOC",
+    "MISC",
+    "ORG",
+    "PER"
+  ],
+  "n_train": 8000,
+  "n_val": 1000,
+  "n_test": 1000,
+  "params_total": 29098929,
+  "baseline": {
+    "majority": {
+      "f1_micro": 0.40244897959183673,
+      "f1_macro": 0.3525827453394206,
+      "precision": 0.596130592503023,
+      "recall": 0.303758471965496
+    },
+    "random_head": {
+      "f1_micro": 0.029716807649871276,
+      "f1_macro": 0.027892846744346556,
+      "precision": 0.01687270297360508,
+      "recall": 0.12446087492298213
+    }
+  },
+  "final": {
+    "f1_micro": 0.7825827617059349,
+    "f1_macro": 0.729834758902796,
+    "precision": 0.7610208816705336,
+    "recall": 0.805402087170043,
+    "token_f1": 0.809064393089522,
+    "per_type": {
+      "LOC": {
+        "precision": 0.8951310861423221,
+        "recall": 0.9041614123581336,
+        "f1-score": 0.8996235884567126,
+        "support": 793
+      },
+      "MISC": {
+        "precision": 0.5977859778597786,
+        "recall": 0.6506024096385542,
+        "f1-score": 0.6230769230769231,
+        "support": 249
+      },
+      "ORG": {
+        "precision": 0.5838509316770186,
+        "recall": 0.6416382252559727,
+        "f1-score": 0.6113821138211382,
+        "support": 293
+      },
+      "PER": {
+        "precision": 0.7424242424242424,
+        "recall": 0.8333333333333334,
+        "f1-score": 0.7852564102564104,
+        "support": 294
+      }
+    }
+  },
+  "ablation": {
+    "setting": "freeze",
+    "full": {
+      "f1_micro": 0.7871894642322658,
+      "f1_macro": 0.7317772081243579,
+      "precision": 0.7654249126891735,
+      "recall": 0.8102279728897104,
+      "seconds": 1173.5066844779997,
+      "trainable_params": 29098929
+    },
+    "frozen": {
+      "f1_micro": 0.43532145623547636,
+      "f1_macro": 0.21919031464828678,
+      "precision": 0.5860271115745568,
+      "recall": 0.34627233518176215,
+      "seconds": 469.860427522,
+      "trainable_params": 2817
+    }
+  },
+  "errors": {
+    "correct": 1315,
+    "boundary": 106,
+    "type": 157,
+    "missed": 45,
+    "spurious": 84
+  },
+  "device": "cpu",
+  "train_time_sec": 1173.5066844779997,
+  "fast_mode": false
+}
